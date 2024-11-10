@@ -1,87 +1,58 @@
 import React from 'react'
 import myPic from '../media/images/me.jpg'
-import { FaPython } from "react-icons/fa";
-import { SiJavascript } from "react-icons/si";
+import { FaPython, FaReact, FaArrowRight } from "react-icons/fa";
+import { SiJavascript, SiPandas } from "react-icons/si";
 import { TbBrandDjango } from "react-icons/tb";
-import { FaReact } from "react-icons/fa";
 import { VscDebugRestartFrame } from "react-icons/vsc";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiPandas } from "react-icons/si";
 import { Link } from 'react-router-dom';
-import { FaArrowRight } from "react-icons/fa";
 
 const PersonalDetails = () => {
     return (
-        <div className='px-4 md:px-8'>
-            {/* Flex container for image and text */}
+        <div className='px-4 md:px-6 overflow-hidden'>
             <div className='flex flex-col-reverse md:flex-row-reverse items-center md:justify-between'>
-                {/* Image section */}
-                <div className='mt-10 md:mt-16 w-full md:w-1/3 relative'>
-                    <img className='w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-80 object-fit rounded-full mx-auto' src={myPic} alt='me' />
-                    <div className='bg-yellow rounded-3xl absolute bottom-[-10px] sm:bottom-[10px] left-10 transform -translate-x-1/2 p-2'>
-                        <h5 className='text-white text-center px-0.5 font-extrabold text-lg sm:text-xl'>
-                            <span className='font-extrabold'>5+</span> <br /> years experience
+                <div className='mt-8 w-full md:w-1/3 relative flex justify-center'>
+                    <img className='w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 object-cover rounded-full' src={myPic} alt='me' />
+                    <div className='bg-yellow absolute bottom-2 sm:bottom-4 left-1/4 p-1 rounded-xl'>
+                        <h5 className='text-white text-center font-extrabold text-sm'>
+                            <span>5+</span> years
                         </h5>
                     </div>
                 </div>
-
-                {/* Text section */}
-                <div className='mt-10 md:mt-20 w-full md:w-1/2 md:order-2'>
-                    <h1 className='text-name-color text-4xl sm:text-6xl md:text-9xl font-extrabold'>
-                        My name <br /> is Dennis
-                    </h1>
-                    <p className='mt-3 font-bold text-base md:text-lg'>
-                        I am an expert in software development <br /> with more than 5 years of experience
-                    </p>
-                    <button className='bg-yellow text-white font-bold px-4 py-2 rounded-lg mt-5 md:mt-1'>
-                        Hire me
-                    </button>
+                <div className='mt-8 w-full md:w-2/3'>
+                    <h1 className='text-3xl sm:text-5xl font-bold'>My name is Dennis</h1>
+                    <p className='mt-2 text-base md:text-lg'>Software development expert with over 5 years of experience.</p>
+                    <button className='bg-yellow text-white font-bold px-3 py-1 rounded mt-3'>Hire me</button>
                 </div>
             </div>
 
-            {/* Skills section */}
-            <div className='mt-8'>
-                <h1 className='font-extrabold text-xl mb-1'>Skills:</h1>
-                <div className='flex flex-wrap gap-2'>
-                    <div className='cursor-pointer flex space-x-1 px-2 py-0.5 justify-center items-center bg-skill-color rounded-lg'>
-                        <FaPython className='text-python-color' />
-                        <h6 className='text-white font-bold'>Python</h6>
-                    </div>
-                    <div className='cursor-pointer flex space-x-1 px-2 py-0.5 justify-center items-center bg-skill-color rounded-lg'>
-                        <SiJavascript className='text-yellow' />
-                        <h6 className='text-white font-bold'>JavaScript</h6>
-                    </div>
-                    <div className='cursor-pointer flex space-x-1 px-2 py-0.5 justify-center items-center bg-skill-color rounded-lg'>
-                        <TbBrandDjango className='text-django-color' />
-                        <h6 className='text-white font-bold'>Django</h6>
-                    </div>
-                    <div className='cursor-pointer flex space-x-1 px-2 py-0.5 justify-center items-center bg-skill-color rounded-lg'>
-                        <VscDebugRestartFrame className='text-django-color' />
-                        <h6 className='text-white font-bold'>Django Rest Framework</h6>
-                    </div>
-                    <div className='cursor-pointer flex space-x-1 px-2 py-0.5 justify-center items-center bg-skill-color rounded-lg'>
-                        <FaReact className='text-react-color' />
-                        <h6 className='text-white font-bold'>React</h6>
-                    </div>
-                    <div className='cursor-pointer flex space-x-1 px-2 py-0.5 justify-center items-center bg-skill-color rounded-lg'>
-                        <RiTailwindCssFill className='text-react-color' />
-                        <h6 className='text-white font-bold'>Tailwind CSS</h6>
-                    </div>
-                    <div className='cursor-pointer flex space-x-1 px-2 py-0.5 justify-center items-center bg-skill-color rounded-lg'>
-                        <SiPandas className='text-react-color' />
-                        <h6 className='text-white font-bold'>Pandas</h6>
-                    </div>
+            <div className='mt-6'>
+                <h1 className='font-bold text-lg'>Skills:</h1>
+                <div className='flex flex-wrap gap-1'>
+                    <SkillBadge icon={<FaPython />} label="Python" />
+                    <SkillBadge icon={<SiJavascript />} label="JavaScript" />
+                    <SkillBadge icon={<TbBrandDjango />} label="Django" />
+                    <SkillBadge icon={<VscDebugRestartFrame />} label="Django Rest" />
+                    <SkillBadge icon={<FaReact />} label="React" />
+                    <SkillBadge icon={<RiTailwindCssFill />} label="Tailwind CSS" />
+                    <SkillBadge icon={<SiPandas />} label="Pandas" />
                 </div>
             </div>
 
-            {/* Portfolio link */}
-            <div className='mt-8'>
-                <Link className='cursor-pointer flex items-center text-2xl font-bold text-name-color' to='/portfolio'>
-                    View Portfolio <FaArrowRight className='ml-2' />
+            <div className='mt-6'>
+                <Link className='flex items-center text-lg font-bold' to='/portfolio'>
+                    View Portfolio <FaArrowRight className='ml-1' />
                 </Link>
             </div>
         </div>
     )
 }
+
+const SkillBadge = ({ icon, label }:{icon:any; label:any}) => (
+    <div className='flex items-center px-2 py-1 cursor-pointer bg-skill-color rounded-md'>
+        {icon}
+        <span className='ml-1 text-sm font-bold'>{label}</span>
+    </div>
+);
 
 export default PersonalDetails;

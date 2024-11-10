@@ -22,7 +22,8 @@ interface SinglePortfolioState {
   error: string | null;
 }
 
-const PORTFOLIO_URL = "https://joyce1.pythonanywhere.com/portfolio";
+// const PORTFOLIO_URL = "https://joyce1.pythonanywhere.com/portfolio";
+const PORTFOLIO_URL = "http://127.0.0.1:8000/portfolio";
 
 const initialState: SinglePortfolioState = {
   singlePortfolio: null, // Changed from array to single object or null

@@ -1,10 +1,8 @@
-import "./App.css"
 import HomePage from "./pages/HomePage"
 import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
 } from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import PortfolioDetails from "./pages/PortfolioDetails";
@@ -14,13 +12,11 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="potfolio/*" element={<Portfolio />} />
+        <Route path="about/" element={<HomePage />} />
+        <Route path="portfolio/*" element={<Portfolio />} />
         <Route path="/potfolio/:porfolioId" element={<PortfolioDetails />} />
       </Routes>
     </BrowserRouter>
-    // <div className="">
-    //   <HomePage />
-    // </div>
   )
 }
 

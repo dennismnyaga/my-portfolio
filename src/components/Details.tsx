@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import dum from '../media/images/Screenshot 2024-09-10 172507.png'
+// import dum from '../media/images/Screenshot 2024-09-10 172507.png'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { fetchSinglePortfolio, getSinglePortfolioStatus, selectSinglePortfolio } from '../features/portfolio/singlePortfolioSlice'
 import { useParams } from 'react-router-dom'
@@ -16,7 +16,8 @@ const Details = () => {
 
   const dispatch = useAppDispatch()
 
-  const urls = 'https://joyce1.pythonanywhere.com'
+  // const urls = 'https://joyce1.pythonanywhere.com'
+  const urls = 'http://127.0.0.1:8000'
 
   useEffect(() => {
     if (ids) {

@@ -18,7 +18,8 @@ interface PortfolioState {
   error: string | null;
 }
 
-const PORTFOLIO_URL = 'https://joyce1.pythonanywhere.com';
+// const PORTFOLIO_URL = 'https://joyce1.pythonanywhere.com';
+const PORTFOLIO_URL = 'http://127.0.0.1:8000';
 
 const initialState: PortfolioState = {
   portfolio: [],
