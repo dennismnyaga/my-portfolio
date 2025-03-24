@@ -6,6 +6,7 @@ import { TbBrandDjango } from "react-icons/tb";
 import { VscDebugRestartFrame } from "react-icons/vsc";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
+import { DiRedis } from "react-icons/di";
 
 const PersonalDetails = () => {
     return (
@@ -22,7 +23,9 @@ const PersonalDetails = () => {
                 <div className='mt-8 w-full md:w-2/3'>
                     <h1 className='text-3xl sm:text-5xl font-bold'>My name is Dennis</h1>
                     <p className='mt-2 text-base md:text-lg'>Software development expert with over 5 years of experience.</p>
-                    <button className='bg-yellow text-white font-bold px-3 py-1 rounded mt-3'>Hire me</button>
+                    <Link to='/contact'>
+                        <button className='bg-yellow text-white font-bold px-3 py-1 rounded mt-3'>Hire me</button>
+                    </Link>
                 </div>
             </div>
 
@@ -33,9 +36,11 @@ const PersonalDetails = () => {
                     <SkillBadge icon={<SiJavascript />} label="JavaScript" />
                     <SkillBadge icon={<TbBrandDjango />} label="Django" />
                     <SkillBadge icon={<VscDebugRestartFrame />} label="Django Rest" />
-                    <SkillBadge icon={<FaReact />} label="React" />
+                    <SkillBadge icon={<FaReact />} label="React js" />
+                    <SkillBadge icon={<FaReact />} label="Next js" />
                     <SkillBadge icon={<RiTailwindCssFill />} label="Tailwind CSS" />
                     <SkillBadge icon={<SiPandas />} label="Pandas" />
+                    <SkillBadge icon={<DiRedis />} label="Redis" />
                 </div>
             </div>
 
@@ -48,7 +53,7 @@ const PersonalDetails = () => {
     )
 }
 
-const SkillBadge = ({ icon, label }:{icon:any; label:any}) => (
+const SkillBadge = ({ icon, label }: { icon: any; label: any }) => (
     <div className='flex items-center px-2 py-1 cursor-pointer bg-skill-color rounded-md'>
         {icon}
         <span className='ml-1 text-sm font-bold'>{label}</span>

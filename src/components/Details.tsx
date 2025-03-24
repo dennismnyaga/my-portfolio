@@ -3,21 +3,18 @@ import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { fetchSinglePortfolio, getSinglePortfolioStatus, selectSinglePortfolio } from '../features/portfolio/singlePortfolioSlice'
 import { useParams } from 'react-router-dom'
-
+import getApiUrl from '../getApiUrl'
 const Details = () => {
   const portfolioId = useParams()
 
   const ids = Number(portfolioId.porfolioId)
   const singlePortArray = useAppSelector(selectSinglePortfolio);
-  // const singlePort = useAppSelector(selectSinglePortfolio);
-  
-  // console.log('data ', singlePort)
+ 
   const portfolioStatus = useAppSelector(getSinglePortfolioStatus);
 
   const dispatch = useAppDispatch()
 
-  // const urls = 'https://joyce1.pythonanywhere.com'
-  const urls = 'http://127.0.0.1:8000'
+  const urls = getApiUrl();
 
   useEffect(() => {
     if (ids) {

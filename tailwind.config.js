@@ -18,7 +18,11 @@ export default {
       'react-color': '#61DBFB',
       'name-color': '#3A1F1F',
       'link-color': '#07CC9D',
-      'vis':'#231717'
+      'vis':'#231717',
+      'whatsapp-color': '#3F7D58',
+      'facebook-color': '#2973B2',
+      'x-color': '#212121',
+      'gray': '#BDB395'
     },
   },
   plugins: [],

@@ -33,13 +33,15 @@ const Nav = () => {
                     <h1 className='text-white font-bold text-lg'>D</h1>
                 </div>
             </Link>
+            <Link to='/contact'>
+                <button className='bg-button-color px-2 py-1 rounded text-sm font-bold'>Contact me</button>
+            </Link>
 
-            <button className='bg-button-color px-2 py-1 rounded text-sm font-bold'>Contact me</button>
         </nav>
     )
 }
 
-const NavItem = ({ label, link }:{label: any; link:any}) => (
+const NavItem = ({ label, link }: { label: any; link: any }) => (
     <li className='font-bold text-sm mx-2'>
         <Link to={link}>{label}</Link>
     </li>

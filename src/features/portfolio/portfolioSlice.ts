@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
+import getApiUrl from "../../getApiUrl";
 
+const apiUrl = getApiUrl()
 // Define the type for portfolio items
 interface PortfolioItem {
 
@@ -18,8 +20,7 @@ interface PortfolioState {
   error: string | null;
 }
 
-// const PORTFOLIO_URL = 'https://joyce1.pythonanywhere.com';
-const PORTFOLIO_URL = 'http://127.0.0.1:8000';
+
 
 const initialState: PortfolioState = {
   portfolio: [],
@@ -31,7 +32,7 @@ const initialState: PortfolioState = {
 export const fetchPortfolio = createAsyncThunk<PortfolioItem[]>(
   "portfolio/fetchPortfolio",
   async () => {
-    const response = await axios.get(PORTFOLIO_URL);
+    const response = await axios.get(apiUrl);
     return response.data;
   }
 );
